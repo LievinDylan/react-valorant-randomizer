@@ -1,27 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import NavItem from '../NavItem/NavItem';
 
 function Header() {
   return (
-    <header aria-label="header of the application">
-      <h2 className="flex flex-column">Valolol</h2>
+    <header
+      className="w-full p-auto flex justify-between bg-green-500"
+      aria-label="header of the application"
+    >
+      <h2 className="m-2 btn">LOGO</h2>
       <nav>
-        <NavLink
-          to="/"
-          aria-label="Navigate to the homepage"
-          className={({ isActive }) => (isActive ? 'font-bold' : '')}
-        >
-          Homepage
-        </NavLink>
-        <NavLink to="/randomizer" aria-label="Navigate to the valosolo page">
-          Valosolo
-        </NavLink>
-        <NavLink
-          to="/team-randomizer"
-          aria-label="Navigate to the valoteam page"
-        >
-          Valoteam
-        </NavLink>
+        <NavItem name="Solo" />
+        <NavItem name="Team" />
       </nav>
     </header>
   );
