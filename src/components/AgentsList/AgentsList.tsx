@@ -30,6 +30,7 @@ function AgentsList({
     });
   }, [data, setSelectedAgents]);
 
+  // add or remove agents from the selectedAgents array when the checkbox is clicked
   const handleCheckboxChange = (uuid: string) => {
     if (selectedAgents.includes(uuid)) {
       setSelectedAgents(selectedAgents.filter((id) => id !== uuid));
@@ -38,6 +39,7 @@ function AgentsList({
     }
   };
 
+  // add all agents to the selectedAgents array when the "All" button is clicked
   const handleAllSelect = () => {
     data.forEach((agent) => {
       setSelectedAgents((prev) => {
@@ -49,6 +51,7 @@ function AgentsList({
     });
   };
 
+  // add agents to the selectedAgents array when the "Duelists" button is clicked
   const handleDuelistsSelect = () => {
     setSelectedAgents([]);
     data.forEach((agent) => {
@@ -63,6 +66,7 @@ function AgentsList({
     });
   };
 
+  // add agents to the selectedAgents array when the "Initiators" button is clicked
   const handleInitiatorsSelect = () => {
     setSelectedAgents([]);
     data.forEach((agent) => {
@@ -77,6 +81,7 @@ function AgentsList({
     });
   };
 
+  // add agents to the selectedAgents array when the "Sentinels" button is clicked
   const handleSentinelsSelect = () => {
     setSelectedAgents([]);
     data.forEach((agent) => {
@@ -91,6 +96,7 @@ function AgentsList({
     });
   };
 
+  // add agents to the selectedAgents array when the "Controllers" button is clicked
   const handleControllerSelect = () => {
     setSelectedAgents([]);
     data.forEach((agent) => {

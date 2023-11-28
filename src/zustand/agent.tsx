@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { DataItem } from './agents';
+import { DataItem } from '../@types/agent.d';
 
 type State = {
   data: DataItem;

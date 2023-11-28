@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { DataItem } from '../../zustand/agents';
+import { DataItem } from '../../@types/agent.d';
 
 function AgentInfo({ agent }: { agent: DataItem }) {
   if (!agent) {
