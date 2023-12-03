@@ -9,7 +9,7 @@ function AgentsListBtn({ type, handleTypeSelect }: AgentsListBtnProps) {
   return (
     <button
       type="button"
-      className="btn"
+      className="btn mx-4"
       onClick={handleTypeSelect}
       aria-label={`Button to select ${type} agents`}
     >

@@ -115,15 +115,18 @@ function AgentsList({
     <label
       key={agent.uuid}
       aria-label="A checkbox to click on to uncheck or check the agent"
-      className="flex flex-col justify-center item-center m-auto"
+      className="flex flex-col justify-center item-center mx-2 my-1 p-2 border"
     >
       <img
         src={agent.displayIcon}
         alt={`A little icon of ${agent.displayName}`}
-        className="w-12 h-12"
+        className={`w-12 h-12 transition-opacity ${
+          selectedAgents.includes(agent.uuid) ? 'opacity-100' : 'opacity-20'
+        }`}
       />
       <input
         type="checkbox"
+        className="hidden"
         value={agent.uuid}
         checked={selectedAgents.includes(agent.uuid)}
         onChange={() => {
@@ -133,23 +136,30 @@ function AgentsList({
     </label>
   ));
   return (
-    <>
-      <AgentsListBtn type="All" handleTypeSelect={handleAllSelect} />
-      <AgentsListBtn type="Duelists" handleTypeSelect={handleDuelistsSelect} />
-      <AgentsListBtn
-        type="Initiators"
-        handleTypeSelect={handleInitiatorsSelect}
-      />
-      <AgentsListBtn
-        type="Sentinels"
-        handleTypeSelect={handleSentinelsSelect}
-      />
-      <AgentsListBtn
-        type="Controllers"
-        handleTypeSelect={handleControllerSelect}
-      />
-      <ul className="flex flex-wrap justify-center p-2">{allAgents}</ul>
-    </>
+    <div>
+      <section className="flex justify-center my-4">
+        <AgentsListBtn type="All" handleTypeSelect={handleAllSelect} />
+        <AgentsListBtn
+          type="Duelists"
+          handleTypeSelect={handleDuelistsSelect}
+        />
+        <AgentsListBtn
+          type="Initiators"
+          handleTypeSelect={handleInitiatorsSelect}
+        />
+        <AgentsListBtn
+          type="Sentinels"
+          handleTypeSelect={handleSentinelsSelect}
+        />
+        <AgentsListBtn
+          type="Controllers"
+          handleTypeSelect={handleControllerSelect}
+        />
+      </section>
+      <ul className="flex flex-wrap justify-center p-2 lg:mx-48">
+        {allAgents}
+      </ul>
+    </div>
   );
 }
 

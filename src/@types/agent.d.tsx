@@ -5,8 +5,8 @@ export interface DataItem {
   isPlayableCharacter: boolean;
   isAvailableForTest: boolean;
   isBaseContent: boolean;
+  fullPortrait: string;
   role: {
-    developerName: string;
     displayName: string;
     description: string;
     displayIcon: string;
@@ -18,18 +18,8 @@ export interface DataItem {
     background: string;
     backgroundGradientColors: string[];
   };
-  recruitmentData: {
-    counterId: string;
-    milestoneId: string;
-    milestoneThreshold: number;
-    useLevelVpCostOverride: boolean;
-    levelVpCostOverride: number;
-    startDate: Date;
-    endDate: Date;
-  };
   uuid: string;
   displayName: string;
   description: string;
   displayIcon: string;
-  assetPath: string;
 }
