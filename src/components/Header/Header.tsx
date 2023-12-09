@@ -4,10 +4,9 @@ import NavItem from '../NavItem/NavItem';
 function Header() {
   return (
     <header
-      className="w-full p-auto flex justify-between bg-green-500"
+      className="w-full p-auto flex justify-center bg-secondary h-16"
       aria-label="header of the application"
     >
-      <h2 className="m-2 btn">LOGO</h2>
       <nav>
         <NavItem name="Solo" />
         <NavItem name="Team" />

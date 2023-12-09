@@ -88,29 +88,46 @@ function WeaponList() {
   };
 
   const weaponsList = randomWeapon.map((weapon: WeaponItem) => (
-    <li key={weapon.uuid}>
+    <li
+      key={weapon.uuid}
+      className="flex items-center justify-center items-center p-2 m-2 h-full"
+    >
+      <h4 className="text-center mx-4">{weapon.displayName}</h4>
       <img
-        className="w-2/5 h-auto"
+        className="h-auto w-1/3"
         src={weapon.displayIcon}
         alt={`a full portrait of ${weapon.displayName}`}
       />
-      <h4>{weapon.displayName}</h4>
     </li>
   ));
 
   return (
-    <>
-      <button type="button" className="btn" onClick={handleMoreRandomSelect}>
-        Randomizer 3 weapons
-      </button>
-      <button type="button" className="btn" onClick={handleRandomSelect}>
-        Randomizer 1 weapon
-      </button>
-      <button type="button" className="btn" onClick={handleEqualSelect}>
-        Equal
-      </button>
-      <div>{weaponsList}</div>
-    </>
+    <section className="h-auto flex flex-col justify-end">
+      <div className="flex flex-wrap m-2 justify-center">
+        <button
+          type="button"
+          className="btn m-2 hover:bg-accent hover:text-secondary text-white bg-secondary"
+          onClick={handleRandomSelect}
+        >
+          One weapon
+        </button>
+        <button
+          type="button"
+          className="btn m-2 hover:bg-accent hover:text-secondary text-white bg-secondary"
+          onClick={handleMoreRandomSelect}
+        >
+          Three weapons
+        </button>
+        <button
+          type="button"
+          className="btn m-2 hover:bg-accent hover:text-secondary text-white bg-secondary"
+          onClick={handleEqualSelect}
+        >
+          Balanced
+        </button>
+      </div>
+      <div className="h-full">{weaponsList}</div>
+    </section>
   );
 }
 

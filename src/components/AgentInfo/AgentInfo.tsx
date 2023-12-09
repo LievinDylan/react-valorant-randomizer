@@ -1,16 +1,16 @@
-import React from 'react';
+import Spinner from '../Spinner/Spinner';
 
 import { DataItem } from '../../@types/agent.d';
 
 function AgentInfo({ agent }: { agent: DataItem }) {
-  if (agent === undefined) {
-    return <div>Agent not found</div>;
+  if (!agent.fullPortrait) {
+    return <Spinner />;
   }
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center">
       <img
-        className="w-2/5 h-auto"
+        className="h-auto w-4/5"
         src={agent.fullPortrait}
         alt={`a full portrait of ${agent.displayName}`}
       />

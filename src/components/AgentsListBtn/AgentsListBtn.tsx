@@ -9,11 +9,11 @@ function AgentsListBtn({ type, handleTypeSelect }: AgentsListBtnProps) {
   return (
     <button
       type="button"
-      className="btn mx-4"
+      className="btn m-2 hover:bg-accent hover:text-secondary text-white bg-secondary"
       onClick={handleTypeSelect}
       aria-label={`Button to select ${type} agents`}
     >
-      Select {type}
+      {type}
     </button>
   );
 }

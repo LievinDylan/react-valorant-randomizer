@@ -115,7 +115,7 @@ function AgentsList({
     <label
       key={agent.uuid}
       aria-label="A checkbox to click on to uncheck or check the agent"
-      className="flex flex-col justify-center item-center mx-2 my-1 p-2 border"
+      className="flex flex-col justify-center item-center mx-2 my-1 p-2"
     >
       <img
         src={agent.displayIcon}
@@ -136,8 +136,8 @@ function AgentsList({
     </label>
   ));
   return (
-    <div>
-      <section className="flex justify-center my-4">
+    <div className="flex flex-col p-2">
+      <section className="flex flex-wrap m-2 items-center justify-center">
         <AgentsListBtn type="All" handleTypeSelect={handleAllSelect} />
         <AgentsListBtn
           type="Duelists"
@@ -156,9 +156,7 @@ function AgentsList({
           handleTypeSelect={handleControllerSelect}
         />
       </section>
-      <ul className="flex flex-wrap justify-center p-2 lg:mx-48">
-        {allAgents}
-      </ul>
+      <ul className="flex flex-wrap justify-center p-2">{allAgents}</ul>
     </div>
   );
 }
